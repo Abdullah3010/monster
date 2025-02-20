@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1098240978488",
+    "project_id": "monster-7df41",
+    "storage_bucket": "monster-7df41.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098240978488:android:e65b2f8e2ce24215c680cd",
+        "android_client_info": {
+          "package_name": "com.example.monster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkgGXDDc4crHUXh2M3pVQgTXdDpi21yi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

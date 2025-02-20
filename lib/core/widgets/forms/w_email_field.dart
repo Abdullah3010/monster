@@ -23,6 +23,7 @@ class WEmailField extends BaseFormField {
       onValidate: validate,
       keyboardType: TextInputType.emailAddress,
       textInputAction: textInputAction,
+      enabled: param?.enabled,
       onChanged: param?.onChanged,
     );
   }

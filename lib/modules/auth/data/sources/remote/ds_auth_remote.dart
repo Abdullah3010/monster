@@ -8,4 +8,5 @@ abstract class DSAuthRemote {
   Future<UserCredential?> login(ParamsLoginUser params);
   Future<void> saveUserData(MUser user);
   Future<MUser?> getUser(String uid);
+  Future<bool> logout();
 }

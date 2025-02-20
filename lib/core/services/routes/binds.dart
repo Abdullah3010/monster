@@ -2,6 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:monster/core/services/routes/binds/auth_bind.dart';
 import 'package:monster/core/services/routes/binds/company_bind.dart';
 import 'package:monster/core/services/routes/binds/job_seeker_bind.dart';
+import 'package:monster/core/services/routes/binds/profile_bind.dart';
 import 'package:monster/core/utils/box_app_config/box_app_config.dart';
 import 'package:monster/core/utils/box_app_config/ds_app_config.dart';
 
@@ -15,5 +16,6 @@ class Binds {
     AuthBind.binds(i);
     JobSeekerBind.binds(i);
     CompanyBind.binds(i);
+    ProfileBind.binds(i);
   }
 }

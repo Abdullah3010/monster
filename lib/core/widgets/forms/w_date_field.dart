@@ -29,6 +29,7 @@ class WDateField extends BaseFormField {
       hint: hint,
       label: label,
       onValidate: validate,
+      enabled: param?.enabled,
       keyboardType: TextInputType.datetime,
       suffixIcon: Padding(
         padding: const EdgeInsets.all(12),

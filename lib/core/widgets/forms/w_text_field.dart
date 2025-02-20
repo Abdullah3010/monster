@@ -27,6 +27,7 @@ class WTextField extends BaseFormField {
       keyboardType: TextInputType.text,
       textInputAction: textInputAction,
       onChanged: param?.onChanged,
+      enabled: param?.enabled,
     );
   }
 }

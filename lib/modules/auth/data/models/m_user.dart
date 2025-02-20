@@ -19,7 +19,7 @@ class MUser {
     return MUser(
       uid: json?['uid'],
       fullName: json?['fullName'],
-      phoneNumber: json?['phoneNumber'],
+      phoneNumber: json?['phoneNumber'].toString().replaceAll(' ', ''),
       email: json?['email'],
       dateOfBirth: json?['dateOfBirth'],
       address: json?['address'],

@@ -17,6 +17,7 @@ class WAppButton extends StatefulWidget {
     this.style,
     this.padding,
     this.borderColor,
+    this.bottonColor,
   });
 
   final String title;
@@ -28,6 +29,7 @@ class WAppButton extends StatefulWidget {
   final TextStyle? style;
   final EdgeInsetsGeometry? padding;
   final Color? borderColor;
+  final Color? bottonColor;
 
   @override
   State<WAppButton> createState() => _WAppButtonState();
@@ -51,8 +53,10 @@ class _WAppButtonState extends State<WAppButton> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(2.r),
           color: widget.isFilled
-              ? (!(widget.isDisabled) ? context.theme.colorScheme.buttonColor : context.theme.colorScheme.lightGreen)
-              : Colors.transparent,
+              ? (!(widget.isDisabled)
+                  ? (widget.bottonColor ?? context.theme.colorScheme.buttonColor)
+                  : context.theme.colorScheme.lightGreen)
+              : widget.bottonColor ?? Colors.transparent,
           border: !widget.isFilled
               ? Border.all(
                   color: widget.borderColor ??

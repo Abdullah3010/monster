@@ -11,6 +11,7 @@ import 'package:monster/core/extension/context_extension.dart';
 import 'package:monster/core/services/routes/routes_names.dart';
 import 'package:monster/core/utils/box_app_config/ds_app_config.dart';
 import 'package:monster/core/widgets/w_shared_scaffold.dart';
+import 'package:monster/modules/auth/presentation/cubit/auth_cubit.dart';
 
 class SNSplash extends StatefulWidget {
   const SNSplash({super.key});
@@ -26,7 +27,10 @@ class _SNSplashState extends State<SNSplash> {
     Future.delayed(
       const Duration(seconds: 2),
       () async {
-        if (DSAppConfig.getConfigValue(Constants.configKeys.isFirstTime) == null) {
+        if (Modular.get<AuthCubit>().getActiveUser() != null) {
+          Modular.to.pushNamed(RoutesNames.home.homeMain);
+          return;
+        } else if (DSAppConfig.getConfigValue(Constants.configKeys.isFirstTime) == null) {
           await DSAppConfig.setConfigValue(Constants.configKeys.isFirstTime, 'false');
           Modular.to.pushNamed(RoutesNames.core.onboarding);
           return;

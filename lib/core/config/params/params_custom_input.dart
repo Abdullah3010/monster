@@ -12,6 +12,7 @@ class ParamsCustomInput {
   final void Function(String)? onChanged;
   final Widget Function(String)? listItemWidget;
   final List<String>? values;
+  final bool? enabled;
 
   const ParamsCustomInput({
     this.hint,
@@ -25,5 +26,6 @@ class ParamsCustomInput {
     this.onChanged,
     this.listItemWidget,
     this.values,
+    this.enabled,
   });
 }

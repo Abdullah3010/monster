@@ -4,6 +4,7 @@ class RoutesNames {
   static CoreRoutes core = CoreRoutes();
   static AuthRoutes auth = AuthRoutes();
   static HomeRoutes home = HomeRoutes();
+  static ProfileRoutes profile = ProfileRoutes();
 }
 
 class CoreRoutes {
@@ -25,4 +26,10 @@ class HomeRoutes {
 
   String get homeMain => '${baseUrl}home';
   String get addJob => '${baseUrl}add-job';
+}
+
+class ProfileRoutes {
+  static String get baseUrl => RoutesNames.baseUrl;
+
+  String get profile => '${baseUrl}profile';
 }

@@ -29,6 +29,7 @@ class WPasswordField extends BaseFormField {
           textInputAction: textInputAction,
           onChanged: param?.onChanged,
           obscureText: isObscure,
+          enabled: param?.enabled,
           suffixIcon: InkWell(
             onTap: () {
               setState(() {

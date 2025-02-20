@@ -26,6 +26,7 @@ class WMultiLineField extends BaseFormField {
       onValidate: validate,
       keyboardType: TextInputType.text,
       textInputAction: textInputAction,
+      enabled: param?.enabled,
       onChanged: param?.onChanged,
       maxLines: maxLines,
       minLines: minLines,

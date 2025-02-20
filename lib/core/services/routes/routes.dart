@@ -7,6 +7,7 @@ import 'package:monster/modules/company/presentation/screens/sn_add_job.dart';
 import 'package:monster/modules/core/presentation/screens/sn_onboarding.dart';
 import 'package:monster/modules/core/presentation/screens/sn_splash.dart';
 import 'package:monster/modules/home/presentation/screens/sn_home_main.dart';
+import 'package:monster/modules/profile/presentation/screens/sn_profile.dart';
 
 /// [Routes] is a class that contains all the routes in the app.
 class Routes {
@@ -49,6 +50,13 @@ class Routes {
       child: (_) => SnAddJob(
         job: r.args.data as MJobPost?,
       ),
+    );
+
+    /// ================= Profile ================= ///
+    r.child(
+      RoutesNames.profile.profile,
+      transition: TransitionType.fadeIn,
+      child: (_) => const SnProfile(),
     );
   }
 }

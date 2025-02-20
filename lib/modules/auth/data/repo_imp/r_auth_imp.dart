@@ -70,4 +70,22 @@ class RAuthImp extends RAuth {
     }
     return null;
   }
+
+  @override
+  Future<bool> logout() async {
+    try {
+      if (await remote.logout()) {
+        await local.clear();
+        return true;
+      }
+      return true;
+    } catch (e, st) {
+      ErrorHelper.printDebugError(
+        name: 'RAuthImp.getActiveUser',
+        error: e,
+        stackTrace: st,
+      );
+    }
+    return false;
+  }
 }

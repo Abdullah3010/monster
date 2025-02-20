@@ -7,5 +7,7 @@ abstract class RAuth {
 
   Future<bool> login(ParamsLoginUser params);
 
+  Future<bool> logout();
+
   MUser? getActiveUser();
 }

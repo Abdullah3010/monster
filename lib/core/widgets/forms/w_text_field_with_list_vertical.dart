@@ -41,6 +41,7 @@ class WTextFieldWithListVertical extends BaseFormField {
               keyboardType: TextInputType.text,
               textInputAction: textInputAction,
               onChanged: param?.onChanged,
+              enabled: param?.enabled,
               onFieldSubmitted: (value) {
                 if (value.isNotEmpty) {
                   setState(() {

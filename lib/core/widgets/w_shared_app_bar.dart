@@ -6,6 +6,7 @@ import 'package:monster/core/assets/assets.gen.dart';
 import 'package:monster/core/extension/color_extension.dart';
 import 'package:monster/core/extension/context_extension.dart';
 import 'package:monster/core/extension/text_theme_extension.dart';
+import 'package:monster/core/services/routes/routes_names.dart';
 
 class WSharedAppBar extends StatelessWidget {
   const WSharedAppBar({
@@ -41,16 +42,21 @@ class WSharedAppBar extends StatelessWidget {
             style: context.textTheme.navyBlue16w900,
           ),
         const Spacer(),
-        Container(
-          width: 40.w,
-          height: 40.h,
-          padding: EdgeInsets.all(10.r),
-          decoration: BoxDecoration(
-            color: context.theme.colorScheme.navyBlue,
-            borderRadius: BorderRadius.circular(50.r),
-          ),
-          child: SvgPicture.asset(
-            Assets.icons.user.path,
+        InkWell(
+          onTap: () {
+            Modular.to.pushNamed(RoutesNames.profile.profile);
+          },
+          child: Container(
+            width: 40.w,
+            height: 40.h,
+            padding: EdgeInsets.all(10.r),
+            decoration: BoxDecoration(
+              color: context.theme.colorScheme.navyBlue,
+              borderRadius: BorderRadius.circular(50.r),
+            ),
+            child: SvgPicture.asset(
+              Assets.icons.user.path,
+            ),
           ),
         )
       ],

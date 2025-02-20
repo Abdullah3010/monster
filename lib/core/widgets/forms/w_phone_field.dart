@@ -28,7 +28,9 @@ class WPhoneField extends BaseFormField {
           name: 'EG',
           code: '+20',
         );
-    controller.text = currentCountry.code;
+    if (controller.text.isEmpty) {
+      controller.text = currentCountry.code;
+    }
     return StatefulBuilder(
       builder: (context, setState) {
         return WSharedField(
@@ -45,6 +47,7 @@ class WPhoneField extends BaseFormField {
           keyboardType: TextInputType.phone,
           textInputAction: textInputAction,
           onChanged: param?.onChanged,
+          enabled: param?.enabled,
           textDirection: TextDirection.ltr,
           prefixIcon: CInputCountryCodePrefix(
             onCountrySelected: (country) {

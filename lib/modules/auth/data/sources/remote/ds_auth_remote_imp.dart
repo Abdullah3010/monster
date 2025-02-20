@@ -76,4 +76,19 @@ class DSAuthRemoteImp implements DSAuthRemote {
       rethrow;
     }
   }
+
+  @override
+  Future<bool> logout() async {
+    try {
+      await auth.signOut();
+      return true;
+    } catch (e, st) {
+      ErrorHelper.printDebugError(
+        name: 'DSAuthRemoteImpl.logout',
+        error: e,
+        stackTrace: st,
+      );
+    }
+    return false;
+  }
 }

@@ -1,7 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:monster/core/services/forms/f_login.dart';
 import 'package:monster/core/services/forms/f_register.dart';
+import 'package:monster/core/services/routes/routes_names.dart';
+import 'package:monster/modules/auth/data/models/m_user.dart';
 import 'package:monster/modules/auth/domain/entities/params_login_user.dart';
 import 'package:monster/modules/auth/domain/entities/params_register_user.dart';
 import 'package:monster/modules/auth/domain/repos/r_auth.dart';
@@ -60,6 +63,16 @@ class AuthCubit extends Cubit<AuthState> {
       } else {
         emit(AuthError());
       }
+    }
+  }
+
+  MUser? getActiveUser() {
+    return repo.getActiveUser();
+  }
+
+  Future<void> logout() async {
+    if (await repo.logout()) {
+      Modular.to.navigate(RoutesNames.auth.login);
     }
   }
 }

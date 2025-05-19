@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:monster/app_bloc_observer.dart';
+import 'package:monster/core/services/notification/notification_service.dart';
 import 'package:monster/core/utils/box_app_config/box_app_config.dart';
 import 'package:monster/core/utils/enums.dart';
 import 'package:monster/firebase_options.dart';
@@ -21,6 +22,7 @@ void main() {
         options: DefaultFirebaseOptions.currentPlatform,
       );
 
+      await NotificationService.initialize();
       await LocalizeAndTranslate.init(
         assetLoader: const AssetLoaderRootBundleJson('assets/lang/'),
         defaultType: LocalizationDefaultType.asDefined,
